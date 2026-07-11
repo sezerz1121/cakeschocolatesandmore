@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 const navItems = [
   { label: "Home", to: "/" },
   { label: "Flavours & More", to: "/cakes" },
-  { label: "Our masterpieces", to: "/our-story" },
+  { label: "Our masterpieces", to: "/our-story", icon: "↗" },
   { label: "Contact us", to: "/visit-us" },
 ];
 
@@ -17,11 +17,11 @@ export default function Header() {
       <div className="site-header__inner">
         <Link to="/" className="wordmark wordmark--full" onClick={closeMenu}>Cakes<span>Chocolates</span><i>&amp; More</i></Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map((item) => <NavLink key={item.to} to={item.to}>{item.label}</NavLink>)}
+          {navItems.map((item) => <NavLink key={item.to} to={item.to}>{item.label}{item.icon && <span className="nav-link__icon" aria-hidden="true">{item.icon}</span>}</NavLink>)}
         </nav>
         <button className="menu-button" type="button" aria-label="Toggle menu" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? "\u00d7" : "\u2630"}</button>
       </div>
-      {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation">{navItems.map((item) => <NavLink key={item.to} to={item.to} onClick={closeMenu}>{item.label}</NavLink>)}</nav>}
+      {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation">{navItems.map((item) => <NavLink key={item.to} to={item.to} onClick={closeMenu}>{item.label}{item.icon && <span className="nav-link__icon" aria-hidden="true">{item.icon}</span>}</NavLink>)}</nav>}
     </header>
   );
 }
