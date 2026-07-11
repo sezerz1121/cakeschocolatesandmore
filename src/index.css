@@ -21,7 +21,7 @@ h1,h2,h3,p { margin: 0; }
 .site-header__inner { max-width: 1240px; height: 78px; margin: auto; padding: 0 30px; display: flex; align-items: center; justify-content: space-between; }
 .wordmark { font-family: "Barlow Condensed", sans-serif; font-size: 32px; line-height: 1; letter-spacing: -1.7px; font-weight: 900; } .wordmark span { color: #e25b36; font-size: .62em; margin-left: 2px; }
 .wordmark--full { display:inline-flex; align-items:baseline; gap:3px; font-family:"Fredoka",sans-serif; font-size:20px; letter-spacing:-.07em; text-transform:none; }.wordmark--full span { color:#ef5e97; font-size:1em; margin:0; }.wordmark--full i { color:#58b88d; font-size:.72em; font-style:normal; font-weight:700; letter-spacing:-.04em; }
-.desktop-nav { display: flex; align-items: center; gap: 31px; margin-left: 65px; } .desktop-nav a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; font-weight: 700; color: rgba(51,29,29,.67); } .desktop-nav a:hover,.desktop-nav a.active { color:#331d1d; }.nav-link__icon { display:inline-block; margin-left:4px; color:#ec5f92; font-size:1.25em; line-height:0; }
+.desktop-nav { display: flex; align-items: center; gap: 31px; margin-left: 65px; } .desktop-nav a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; font-weight: 700; color: rgba(51,29,29,.67); } .desktop-nav a:hover,.desktop-nav a.active { color:#331d1d; }
 .header-order { background:#f8d52a; border: 1px solid #331d1d; border-radius: 999px; padding: 11px 18px; font-family:"Barlow Condensed",sans-serif; font-size:15px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; box-shadow: 3px 3px 0 #331d1d; } .header-order:hover { transform: translate(2px,2px); box-shadow:1px 1px 0 #331d1d; }
 .menu-button,.mobile-nav { display:none; }
 
@@ -82,7 +82,7 @@ h1,h2 { font-family:"Barlow Condensed", Impact, sans-serif; font-weight:900; let
   .wordmark--full { max-width:220px; flex-wrap:wrap; column-gap:4px; font-size:18px; line-height:.9; }
   .menu-button { display:grid; place-items:center; width:44px; height:44px; padding:0; font-size:24px; }
   .mobile-nav { padding:8px 20px 18px; box-shadow:0 12px 18px rgba(96,59,117,.08); }
-  .mobile-nav a { min-height:44px; display:flex; align-items:center; font-size:17px; }.mobile-nav .nav-link__icon { margin-left:7px; font-size:22px; }
+  .mobile-nav a { min-height:44px; display:flex; align-items:center; font-size:17px; }.hero-copy--new .text-link span { color:#ec5f92; }
 
   .hero-canvas { min-height:650px; }
   .hero-copy--new { padding:44px 20px 0; }
