@@ -2,8 +2,8 @@ import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 const navItems = [
+  { label: "Home", to: "/" },
   { label: "Cakes", to: "/cakes" },
-  { label: "Custom cupcakes", to: "/desserts" },
   { label: "Our masterpieces", to: "/our-story" },
   { label: "Contact us", to: "/visit-us" },
 ];
