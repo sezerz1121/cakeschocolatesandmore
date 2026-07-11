@@ -19,7 +19,10 @@ export default function Hero() {
         gsap.to(item, { x: gsap.utils.random(-9, 10), y: gsap.utils.random(-15, -6), rotation: gsap.utils.random(-14, 14), duration: gsap.utils.random(2.2, 4.2), delay: index * .13, repeat: -1, yoyo: true, ease: "sine.inOut" });
       });
     });
-    media.add("(max-width: 700px) and (prefers-reduced-motion: no-preference)", () => gsap.timeline().from(".hero-animate", { y: 18, opacity: 0, duration: .42, stagger: .07 }).from(".hero-product", { scale: .94, opacity: 0, duration: .42 }, .18));
+    media.add("(max-width: 700px) and (prefers-reduced-motion: no-preference)", () => gsap.timeline({ defaults: { ease: "power2.out" } })
+      .from(".hero-animate", { y: 14, opacity: 0, duration: .36, stagger: .06 })
+      .from(".hero-product", { y: 12, scale: .96, opacity: 0, duration: .42 }, .15)
+      .from(".hero-offer, .hero-discount", { scale: .9, opacity: 0, duration: .28, stagger: .05 }, .3));
     return () => media.revert();
   }, { scope: heroRef });
 
