@@ -32,7 +32,7 @@ export default function Hero() {
         <p className="eyebrow hero-animate">Custom cakes in Austin, TX</p>
         <h1 className="hero-animate">CELEBRATE LIFE<br />WITH <em>CAKES CHOCOLATES<br />&amp; MORE.</em></h1>
         <p className="hero-description hero-animate">Artful custom cakes, cupcakes and sweet centrepieces made from scratch for your most meaningful celebrations.</p>
-        <div className="hero-actions hero-animate"><Button to="/cakes">Request a quote <span aria-hidden="true">→</span></Button><Link className="text-link" to="/our-story">View our work <span>↗</span></Link></div>
+        <div className="hero-actions hero-animate"><Button to="/visit-us">Request a quote <span aria-hidden="true">→</span></Button><Link className="text-link" to="/our-story">View our work <span>↗</span></Link></div>
       </div>
       <div className="hero-watermark">CCM</div>
       <div className="hero-product"><img src="/images/generated/cupcake-cluster.png" alt="Colourful custom cupcakes" /></div>
