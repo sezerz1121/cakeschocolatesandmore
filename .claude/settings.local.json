@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm create *)",
+      "Bash(npx create-vite@latest . --template react --verbose)",
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(mkdir -p /tmp/vite-test-empty)",
+      "Read(//tmp/**)",
+      "Bash(npx create-vite@latest . --template react)",
+      "Bash(echo \"EXIT: $?\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(curl -sf http://localhost:5173)",
+      "WebFetch(domain:quacksbakery.com)",
+      "WebSearch",
+      "WebFetch(domain:www.quacksbakery.com)",
+      "WebFetch(domain:quacks43rd.com)",
+      "WebFetch(domain:order.toasttab.com)",
+      "WebFetch(domain:captquacks.com)",
+      "Bash(npm install *)"
+    ]
+  }
+}
