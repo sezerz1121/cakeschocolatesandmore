@@ -1,4 +1,10 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/ui/Button.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const flavourGroups = [
   { title: "Classic favourites", items: ["Vanilla bean", "Chocolate", "Yellow cake", "Marble"] },
@@ -10,10 +16,56 @@ const fillings = ["Chocolate ganache", "Vanilla custard", "Lemon curd", "Salted 
 const finishes = ["Vanilla buttercream", "Chocolate buttercream", "Fluffy whipped icing", "Rolled fondant", "Chocolate ganache"];
 
 export default function Cakes() {
+  const pageRef = useRef(null);
+
+  useGSAP(() => {
+    const media = gsap.matchMedia();
+    const reveal = (targets, trigger, settings = {}) => gsap.from(targets, {
+      autoAlpha: 0,
+      y: 26,
+      duration: 0.68,
+      stagger: 0.1,
+      ease: "power3.out",
+      scrollTrigger: { trigger, start: "top 82%", once: true },
+      ...settings,
+    });
+
+    media.add("(prefers-reduced-motion: no-preference) and (min-width: 701px)", () => {
+      const hero = gsap.timeline({ defaults: { ease: "power3.out" } });
+      hero.from(".flavours-hero__content > *", { autoAlpha: 0, y: 22, duration: 0.58, stagger: 0.08 })
+        .from(".flavours-hero__note", { autoAlpha: 0, scale: 0.86, duration: 0.52, ease: "back.out(1.35)" }, 0.18);
+
+      // A single ambient motion keeps the hero playful without spending frame budget.
+      gsap.to(".flavours-hero__note", { y: -6, duration: 3.6, yoyo: true, repeat: -1, ease: "sine.inOut" });
+      reveal(".flavours-intro > *", ".flavours-intro", { stagger: 0.09 });
+      reveal(".flavour-menu__heading, .flavour-menu article", ".flavour-menu", { stagger: 0.11 });
+      gsap.from(".pairings-section__image img", {
+        scale: 1.08,
+        duration: 1.05,
+        ease: "power2.out",
+        scrollTrigger: { trigger: ".pairings-section__image", start: "top 80%", once: true },
+      });
+      reveal(".pairings-section__image, .pairings-section__copy", ".pairings-section", { stagger: 0.12 });
+      reveal(".flavours-cta > *", ".flavours-cta", { stagger: 0.08 });
+    });
+
+    media.add("(prefers-reduced-motion: no-preference) and (max-width: 700px)", () => {
+      gsap.from(".flavours-hero__content > *", { autoAlpha: 0, y: 16, duration: 0.45, stagger: 0.06, ease: "power2.out" });
+      gsap.from(".flavours-hero__note", { autoAlpha: 0, scale: 0.92, duration: 0.4, delay: 0.18, ease: "power2.out" });
+      const compact = { y: 18, duration: 0.48, stagger: 0.06 };
+      reveal(".flavours-intro > *", ".flavours-intro", compact);
+      reveal(".flavour-menu__heading, .flavour-menu article", ".flavour-menu", compact);
+      reveal(".pairings-section__image, .pairings-section__copy", ".pairings-section", compact);
+      reveal(".flavours-cta > *", ".flavours-cta", compact);
+    });
+
+    return () => media.revert();
+  }, { scope: pageRef });
+
   return (
-    <div className="flavours-page">
+    <div ref={pageRef} className="flavours-page">
       <header className="flavours-hero">
-        <div>
+        <div className="flavours-hero__content">
           <p className="eyebrow">Cakes Chocolates & More · Austin, TX</p>
           <h1>FLAVOURS<br />&amp; <em>MORE.</em></h1>
           <p>Beautiful custom cakes should taste as memorable as they look. Explore our cake flavours, fillings and finishes, all chosen to make your Austin celebration unmistakably yours.</p>
