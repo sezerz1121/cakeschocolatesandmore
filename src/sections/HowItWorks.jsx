@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/ui/Button.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
-const steps = [["01", "Share your vision", "Tell us about your event, inspiration, flavours and design ideas."], ["02", "Design your masterpiece", "We shape the details into a cake that is uniquely yours."], ["03", "We craft every layer", "Our Austin cake artists bake every creation from scratch."], ["04", "Celebrate beautifully", "Your custom cake arrives ready to be the centrepiece."]];
+const steps = [["01", "Share your vision", "Tell us about your event, guest count, favourite flavours and design inspiration."], ["02", "Plan the details", "Together, we shape a cake that feels unmistakably yours."], ["03", "We craft every layer", "Our Austin cake artists bake and decorate your creation with care."], ["04", "Celebrate beautifully", "Your custom cake is ready to become the sweetest part of the occasion."]];
 
 export default function HowItWorks() {
   const sectionRef = useRef(null);

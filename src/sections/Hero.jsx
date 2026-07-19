@@ -30,8 +30,8 @@ export default function Hero() {
     <div className="hero-canvas">
       <div className="hero-copy hero-copy--new">
         <p className="eyebrow hero-animate">Custom cakes in Austin, TX</p>
-        <h1 className="hero-animate">CELEBRATE LIFE<br />WITH <em>CAKES CHOCOLATES<br />&amp; MORE.</em></h1>
-        <p className="hero-description hero-animate">Artful custom cakes, cupcakes and sweet centrepieces made from scratch for your most meaningful celebrations.</p>
+        <h1 className="hero-animate">WHERE ART, TASTE<br />&amp; DESIGN <em>COME<br />TOGETHER.</em></h1>
+        <p className="hero-description hero-animate">Handcrafted custom cakes, cupcakes and edible centrepieces made from scratch for the celebrations you will never forget.</p>
         <div className="hero-actions hero-animate"><Button to="/visit-us">Request a quote <span aria-hidden="true">→</span></Button><Link className="text-link" to="/our-story">View our work <span>↗</span></Link></div>
       </div>
       <div className="hero-watermark">CCM</div>

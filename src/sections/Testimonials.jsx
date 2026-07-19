@@ -7,9 +7,9 @@ export default function Testimonials() {
   useScrollReveal(sectionRef, { selector: ".review-reveal", stagger: .14, y: 38 });
   return <section ref={sectionRef} className="review-section">
     <div className="review-intro review-reveal">
-      <p className="eyebrow">Austin&apos;s custom cake studio</p>
+      <p className="eyebrow">Kind words from Austin</p>
       <h2>GOOD WORDS,<br /><em>GREAT CAKE.</em></h2>
-      <p className="review-copy">We&apos;re proud to create cakes that make weddings, birthdays and milestones feel even more unforgettable.</p>
+      <p className="review-copy">We are proud to make weddings, birthdays and milestones feel even more unforgettable—one custom cake at a time.</p>
       <div className="review-score"><strong>4.9</strong><div><span>★★★★★</span><small>from 1,200+ happy locals</small></div></div>
       <div className="review-sprinkle review-sprinkle--one">✦</div><div className="review-sprinkle review-sprinkle--two">✦</div>
     </div>
