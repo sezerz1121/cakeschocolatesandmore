@@ -32,7 +32,7 @@ export default function Cakes() {
 
     media.add("(prefers-reduced-motion: no-preference) and (min-width: 701px)", () => {
       const hero = gsap.timeline({ defaults: { ease: "power3.out" } });
-      hero.from(".flavours-hero__content > *", { autoAlpha: 0, y: 22, duration: 0.58, stagger: 0.08 })
+      hero.from(".flavours-hero__content > *:not(.button)", { autoAlpha: 0, y: 22, duration: 0.58, stagger: 0.08 })
         .from(".flavours-hero__note", { autoAlpha: 0, scale: 0.86, duration: 0.52, ease: "back.out(1.35)" }, 0.18);
 
       // A single ambient motion keeps the hero playful without spending frame budget.
@@ -50,7 +50,7 @@ export default function Cakes() {
     });
 
     media.add("(prefers-reduced-motion: no-preference) and (max-width: 700px)", () => {
-      gsap.from(".flavours-hero__content > *", { autoAlpha: 0, y: 16, duration: 0.45, stagger: 0.06, ease: "power2.out" });
+      gsap.from(".flavours-hero__content > *:not(.button)", { autoAlpha: 0, y: 16, duration: 0.45, stagger: 0.06, ease: "power2.out" });
       gsap.from(".flavours-hero__note", { autoAlpha: 0, scale: 0.92, duration: 0.4, delay: 0.18, ease: "power2.out" });
       const compact = { y: 18, duration: 0.48, stagger: 0.06 };
       reveal(".flavours-intro > *", ".flavours-intro", compact);
